@@ -1,0 +1,49 @@
+{
+  "name": "CesnaFluid_webapp",
+  "version": "1.0.0",
+  "description": "Dashboard de control para dispositivo contador de Diesel",
+  "main": "index.html",
+  "directories": {
+    "example": "root"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "black dashboard",
+    "bootstrap admin",
+    "bootstrap dashboard",
+    "black design admin",
+    "black design",
+    "creative tim",
+    "html dashboard",
+    "html css dashboard",
+    "web dashboard",
+    "freebie",
+    "free bootstrap dashboard",
+    "css3 dashboard",
+    "bootstrap admin",
+    "bootstrap dashboard",
+    "frontend",
+    "responsive bootstrap dashboard"
+  ],
+  "author": "VABAJA",
+  "license": "CesnaFluid",
+  "bugs": {
+    "url": ""
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-open": "^3.0.1"
+  },
+  "homepage": "www.vabaja.com.mx"
+}
