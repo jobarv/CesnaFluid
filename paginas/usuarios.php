@@ -1,5 +1,23 @@
 <?php
 include('../scripts/sesion.php');
+if($_POST['buscar']){
+  $userName = $_POST['buscar'];
+  //$userName = $_POST['userName'];
+
+  $conectare = mysqli_connect('localhost', 'root', '123456', 'tramex1');
+
+    $first = "SELECT id_usuarios FROM clientes WHERE nombreCliente LIKE '%$userName%'";
+
+    $second = mysqli_query($conectare, $first);
+    
+    $third = mysqli_fetch_array($second);
+
+    $ide = $third['id_usuarios'];
+
+    //die(print_r($ide));
+    $resultado_usuarios = mysqli_query($conectare, "SELECT usuario, usuariopin, nomusuario, locacion, fechareg, usuarios_id FROM usuarios WHERE usuarios_id = '$ide'");
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -352,7 +370,7 @@ include('../scripts/sesion.php');
                         <tbody>
                           <?php
 
-                          include('../scripts/registro_tab.php');
+                         // include('../scripts/registro_tab.php');
                           while ($fila = mysqli_fetch_array($resultado_usuarios)) : ?>
 
                             <tr>
