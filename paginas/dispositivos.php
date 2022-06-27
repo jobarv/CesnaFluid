@@ -214,9 +214,11 @@ include('../scripts/sesion.php');
                                                             <?php echo $fila['telefono']; ?>
                                                         </td>
                                                         <td class="text-center">
-                                                            <?php echo $fila['correo']; ?>
+                                                            <?php echo $fila['correo'];
+                                                                    ?>
                                                         </td>
-                                                    <?php endwhile; ?>
+                                                    <?php $client_id = $fila['id'];
+                                                     endwhile; ?>
                                                 </tr>
                                             </tbody>
 
@@ -450,7 +452,7 @@ include('../scripts/sesion.php');
                             <h6 class="title d-inline">Configuración del Dispositivo</h6>
                         </div>
                         <div class="card-body ">
-                            <form action="../scripts/conf_dispositivo.php" method="post">
+                            <form action="../scripts/conf_dispositivo.php?client_id=<?php echo $client_id;?>" method="post">
                                 <div class="table-full-width table-responsive">
                                     <table class="table">
                                         <thead>
@@ -490,9 +492,9 @@ include('../scripts/sesion.php');
                                                 <td class="text-center">
                                                     <?php
 
-                                                    
+                                                    if(empty($client_id)){die();}
                                                     $conectar = mysqli_connect('localhost', 'root', '123456', 'tramex1');
-                                                    $var = "SELECT * FROM configuracion";
+                                                    $var = "SELECT * FROM configuracion WHERE configuracion_id = '$client_id'";
                                                     $vars = mysqli_query($conectar,$var);
                                                     $varsh = mysqli_fetch_array($vars);
 

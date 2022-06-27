@@ -2,7 +2,7 @@
 session_start();
 $conectar = mysqli_connect('localhost', 'root', '123456', 'tramex1');
 
-
+$client_id =$_GET['client_id'];
 if(isset($_POST['confDevice1']) && $_POST['confDevice1'] == "1"){
     $conf1 = 1;
 }else{
@@ -54,7 +54,7 @@ if(isset($_POST['confDevice8']) && $_POST['confDevice8'] == "1"){
 
 } */
 
-$conf_Device = "UPDATE configuracion SET usuario = '$conf1', pinUsuario = '$conf2', vehiculo = '$conf3', pinVehiculo = '$conf4', km = '$conf5', ticket = '$conf6', volumen = '$conf7', impresora = '$conf8'";
+$conf_Device = "UPDATE configuracion SET usuario = '$conf1', pinUsuario = '$conf2', vehiculo = '$conf3', pinVehiculo = '$conf4', km = '$conf5', ticket = '$conf6', volumen = '$conf7', impresora = '$conf8' WHERE configuracion_id = '$client_id'";
 
 if (mysqli_query($conectar, $conf_Device)) {
     echo "<script> alert ('Configuración actualizada con éxito');
